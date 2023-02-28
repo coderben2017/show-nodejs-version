@@ -1,8 +1,9 @@
 {
   "name": "show-nodejs-version",
   "displayName": "show-nodejs-version",
-  "description": "show your local node.js version in vscode status bar",
-  "version": "0.0.1",
+  "description": "在状态栏展示当前Node.js版本",
+  "icon": "logo.png",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.75.0"
   },
@@ -14,25 +15,27 @@
     "email": "coderben2016@126.com"
   },
   "publisher": "CoderBen",
-  "activationEvents": [],
   "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:show-nodejs-version.refresh"
+  ],
   "contributes": {
-    "commands": [
-      {
-        "command": "show-nodejs-version.refresh",
-        "title": "refresh node.js version"
-      }
-    ],
-    "keybindings": [
+		"commands": [
 			{
-        "command": "show-nodejs-version.refresh",
+				"command": "show-nodejs-version.refresh",
+				"title": "refresh node.js version"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "show-nodejs-version.refresh",
         "key": "alt+e",
         "mac": "alt+e"
       }
 		]
-  },
+	},
   "repository": {
-    "url": ""
+    "url": "https://github.com/coderben2017/vscode-show-nodejs-version"
   },
   "scripts": {
     "build": "vsce package --no-yarn",
